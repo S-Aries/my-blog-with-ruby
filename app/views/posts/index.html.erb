@@ -1,0 +1,48 @@
+ <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header header1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Hi, Welcome to my blog. <%= link_to "about", about_path %> <a href="/pages/contact">Contact Us</a> <%= link_to "New Post", new_post_path %></h1>
+                        <hr class="small">
+                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+ <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            	<% @posts.each do |post| %>
+            	<div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            <%= link_to post.title, post_path(post) %>
+                        </h2>
+                        <!--<h3 class="post-subtitle">
+                            Problems look mighty small from 150 miles up
+                        </h3>-->
+                    </a>
+                    <p class="post-meta"><%= link_to "edit", edit_post_path(post) %>  | <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure want to delete this post?"} %></p>
+                </div>
+                <hr>
+                <% end %>
+            </div>
+        </div>
+ </div>
+<h1> <%= link_to "about", about_path %> <a href="/pages/contact">Contact Us</a> <%= link_to "New Post", new_post_path %></h1>
+
+<!--<% @posts.each do |post| %>
+<div class="panel" >
+	<h2><%= link_to post.title, post_path(post) %></h2>
+	<p> <%= link_to "edit", edit_post_path(post) %>  |
+	<%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure want to delete this post?"} %> 
+
+
+	</p>
+	</div>
+<% end %>-->

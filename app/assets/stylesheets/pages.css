@@ -1,0 +1,12 @@
+.lapua_image {
+	width: 120px;
+	height: 120px;
+	background-image:url("lapua.JPG")
+}
+
+.panel {
+	background-color: lightgrey;
+	padding: 25px 20px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
